@@ -16,8 +16,12 @@ public class CustomerReader {
 	private CustomerRepository repository;
 
 	@GET
-	@Produces(MediaType.TEXT_HTML)
-	public String getHtml() {
+	@Produces(MediaType.APPLICATION_JSON)
+	public Customer getHtml() {
+		return new Customer("Aron", "Pumba");
+	}
+
+	private String print() {
 		// fetch all customers
 		StringBuilder builder = new StringBuilder();
 		builder.append("Customers found with findAll():<br>");
